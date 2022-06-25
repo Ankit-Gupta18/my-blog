@@ -28,4 +28,18 @@ For me, Google Summer of Code was an opportunity to meet the community, exchange
 
 On May 21, 2022, I got an email with the subject line “**GSoC 2020: Congratulations, your proposal with Wikimedia Foundation has been accepted!**” 🎉 My joy knew no bounds. I was super excited to get started and was looking forward to a great summer!
 
-The project I will be working on is . My Google Summer of Code Proposal can be found [**here**](https://phabricator.wikimedia.org/T248868).
+The project I will be working on is [Edit Request Wizard](https://phabricator.wikimedia.org/T300454 "Edit Request Wizard"). My Google Summer of Code Proposal can be found [here](https://phabricator.wikimedia.org/T305288 "Gsoc Proposal").
+
+#### Highlights
+
+* Accepted Projects announced![**  
+  **](https://www.vidhimody.me/static/5f04b2ebe5966750144cfeb784a8377e/47311/accepted_projects.jpg)**![](/uploads/gsoc-congratulation-message.png)**
+* Learned more about the community.
+* Coordinated with my mentor and fixed meetings for the coming week.
+* The week ended with the Wikimedia Welcome Party. It was great meeting and interacting with the community and fellow students. I also learned that I share similar interests with a few of them. ( _How awesome is that?_ :v:)
+
+  **![](/uploads/gsoc-welcome-party.png)**[****](https://www.vidhimody.me/static/1a87417d6cc5c0d2feaf8f79ff92c276/4b190/welcome_party.jpg)
+
+#### Afterword
+
+The organization has been very helpful and welcoming since the day I began my application process. Whenever I was stuck with something, I have always received the guidance I need however silly my questions might have been. I see myself continuing to contribute to Wikimedia Foundation as a Volunteer even after the program ends.
