@@ -2,7 +2,7 @@
 categories = ["GSoC"]
 date = 2022-06-19T04:07:47Z
 description = "Gsoc experience chapter 0"
-image = "images/post/post-2.jpg"
+image = "/uploads/gsoc1.png"
 tags = ["GSoC", "Internship"]
 title = "GSoCpedia 2022: The Journey So Far"
 type = "post"
