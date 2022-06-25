@@ -3,7 +3,8 @@ title: 'GSoCpedia 2022: Chapter One'
 date: 2022-06-19T04:07:47.000+00:00
 image: "/uploads/12-removebg-preview.png"
 description: Gsoc experience chapter one
-categories: []
+categories:
+- GSOC
 tags:
 - GSoC
 - Internship
