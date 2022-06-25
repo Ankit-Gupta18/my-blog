@@ -1,6 +1,6 @@
 +++
 categories = ["GSoC"]
-date = 2022-06-19T04:07:47Z
+date = 2022-06-10T04:07:47Z
 description = "Gsoc experience chapter 0"
 image = "/uploads/gsoc1.png"
 tags = ["GSoC", "Internship"]
