@@ -32,7 +32,9 @@ The project I will be working on is [Edit Request Wizard](https://phabricator.wi
 
 #### Highlights
 
-* Accepted Projects announced**![](/uploads/gsoc-congratulation-message.png)
+* Accepted Projects announced!
+
+  ![](/uploads/gsoc-congratulation-message.png)
 * Learned more about the community.
 * Coordinated with my mentor and fixed meetings for the coming week.
 * The week ended with the Wikimedia Welcome Party. It was great meeting and interacting with the community and fellow students. I also learned that I share similar interests with a few of them. ( _How awesome is that?_ :v:)
