@@ -1,5 +1,5 @@
 +++
-categories = ["GSoC"]
+categories = []
 date = 2022-06-10T04:07:47Z
 description = "Gsoc experience chapter 0"
 image = "/uploads/gsoc.png"
