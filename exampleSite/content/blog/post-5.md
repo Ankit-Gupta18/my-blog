@@ -1,7 +1,7 @@
 ---
 title: 'GSoCpedia 2022: Chapter One'
 date: 2022-06-19T04:07:47.000+00:00
-image: images/post/post-2.jpg
+image: "/uploads/gsoc-ch-1.png"
 description: Gsoc experience chapter one
 categories: []
 tags:
