@@ -57,4 +57,4 @@ The project I will be working on is the [Edit Request Wizard](https://summerofco
 
   ![](/uploads/talk-page-interface-blog-chapter-one.png)
 
-  It was great week coding on the MVP.
+  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form.
