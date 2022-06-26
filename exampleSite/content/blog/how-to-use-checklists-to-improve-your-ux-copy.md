@@ -2,7 +2,7 @@
 categories = ["GSOC"]
 date = 2022-06-26T06:07:47Z
 description = "this is meta description"
-image = "/uploads/12-removebg-preview.png"
+image = ""
 tags = ["Internship", "GSoC"]
 title = "GSoCpedia 2022: Chapter One"
 type = "post"
