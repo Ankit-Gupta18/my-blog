@@ -9,6 +9,7 @@ tags:
 - GSoC
 - Internship
 type: post
+draft: true
 
 ---
 > _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
