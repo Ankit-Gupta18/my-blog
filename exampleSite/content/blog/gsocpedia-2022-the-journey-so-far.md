@@ -26,7 +26,7 @@ For me, Google Summer of Code was an opportunity to meet the community, exchange
 
 ### Ad Astra Per Aspera
 
-On May 21, 2022, I got an email with the subject line “**GSoC 2020: Congratulations, your proposal with Wikimedia Foundation has been accepted!**” 🎉 My joy knew no bounds. I was super excited to get started and was looking forward to a great summer!
+On May 21, 2022, I got an email with the subject line “**GSoC 2022: Congratulations, your proposal with Wikimedia Foundation has been accepted!**” 🎉 My joy knew no bounds. I was super excited to get started and was looking forward to a great summer!
 
 The project I will be working on is [Edit Request Wizard](https://phabricator.wikimedia.org/T300454 "Edit Request Wizard"). My Google Summer of Code Proposal can be found [here](https://phabricator.wikimedia.org/T305288 "Gsoc Proposal").
 
@@ -39,7 +39,6 @@ The project I will be working on is [Edit Request Wizard](https://phabricator.wi
 * Coordinated with my mentor and fixed meetings for the coming week.
 * The week ended with the Wikimedia Welcome Party. It was great meeting and interacting with the community and fellow students. I also learned that I share similar interests with a few of them. ( _How awesome is that?_ :v:)
 
-    
   ![](/uploads/gsoc-welcome-party.png)
 
 ### Afterword
