@@ -6,7 +6,6 @@ description: this is meta description
 categories:
 - HTML
 tags: []
-type: post
 
 ---
 # Heading 1
