@@ -1,151 +1,56 @@
 +++
-categories = ["HTML"]
-date = 2019-10-29T04:07:47Z
+categories = ["GSOC"]
+date = 2022-06-26T06:07:47Z
 description = "this is meta description"
-image = "images/post/post-3.jpg"
-tags = ["Photos", "Game", "HTML", "Python", "New"]
-title = "How To Use Checklists To Improve Your UX-(copy)"
+image = "/uploads/12-removebg-preview.png"
+tags = ["Internship", "GSoC"]
+title = "GSoCpedia 2022: Chapter One"
 type = "post"
 
 +++
-# Heading 1
+> _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
 
-## Heading 2 
+### Getting started
 
-### Heading 3
+The project I will be working on is the [Edit Request Wizard](https://summerofcode.withgoogle.com/programs/2022/projects/u0WNs8PY "Project").  This project aims at creating a step-by-step form to help beginners submit a Wikipedia edit request. An edit request is a request for someone to change some text in an article. Edit requests are an important part of Wikipedia. The form created in this project will help the edit requests comply with Wikipedia policy. It will be developed as a Wikipedia user script that shows a form for submitting a Wikipedia edit request, with high-quality guidance and error messages, suitable for use by beginners, and a backend server that the user script will make calls to for validation of source and quote.
 
-#### Heading 4
+### Highlights
 
-##### Heading 5
+#### Week 1 - 2(13th - 26th June)
 
-###### Heading 6
+* Discussed the project idea on Minimum Viable Product(MVP), and the overall workflow of the project with mentors in the meeting.
 
-<hr>
+  ![](/uploads/gsoc-meet-1.png)
+* Learned OOUI for creating the user interface of the form and MediaWiki API to add functionality in the form to make API calls.
+* Created the initial frontend ie an edit request form shown as a popup with the following steps:
+  * Input for the URL
+  * An interface to select the location of the text
+  * Input for the Quote
+  * Input for the Rephrased Quote
 
-##### Emphasis
+  ![](/uploads/form-blog-chapter-one.png)
+* Added functionality to the form to put these values on the Talk Page of the current article using MediaWiki API calls.
 
-Emphasis, aka italics, with _asterisks_ or _underscores_.
+      function editPage( info ) {
+            var api = new mw.Api();
+            api.postWithToken("csrf", {
+              action: 'edit',
+              title: info.title,
+              appendtext: info.text, // will replace entire page content
+              summary: info.summary
+            } ).done(function( data ) {
+              alert( 'Edit Request sent to talk page..!' );
+            } ).fail( function(code, data) {
+              console.log( api.getErrorMessage( data ).text());
+            } );
+          }
+          // API calls code goes here
+                  editPage({
+                    title: (new mw.Title(mw.config.get("wgPageName"))).getTalkPage().toText(),
+                    text: '<b>Edit Request made by</b> ~~' + '~~' + '<br><b>Source URL:</b> ' + linkValue + '<br><b>Spot where to add the fact:</b> ' + selectValue + '<br><b>Quote:</b> ' + quoteValue + '<br><b>Rephrased Quote:</b> ' + requoteValue + '<br><br> ',
+                    summary: 'Edit Request to add a fact'
+                  }); 
 
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
+  ![](/uploads/talk-page-interface-blog-chapter-one.png)
 
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-<hr>
-
-##### Link
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link](https://www.mozilla.org)
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions](http://slashdot.org)
-
-Or leave it empty and use the [link text itself](http://www.reddit.com).
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or [http://www.example.com](http://www.example.com) and sometimes
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-<hr>
-
-##### Paragraph
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus, facilis placeat pariatur! Voluptatem, sed harum pariatur adipisci voluptates voluptatum cumque, porro sint minima similique magni perferendis fuga! Optio vel ipsum excepturi tempore reiciendis id quidem? Vel in, doloribus debitis nesciunt fugit sequi magnam accusantium modi neque quis, vitae velit, pariatur harum autem a! Velit impedit atque maiores animi possimus asperiores natus repellendus excepturi sint architecto eligendi non, omnis nihil. Facilis, doloremque illum. Fugit optio laborum minus debitis natus illo perspiciatis corporis voluptatum rerum laboriosam.
-
-<hr>
-
-##### List
-
-1. List item
-2. List item
-3. List item
-4. List item
-5. List item
-
-##### Unordered List
-
-* List item
-* List item
-* List item
-* List item
-* List item
-
-<hr>
-
-##### Code and Syntax Highlighting
-
-Inline `code` has `back-ticks around` it.
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print s
-```
-
-    No language indicated, so no syntax highlighting. 
-    But let's throw in a <b>tag</b>.
-
-<hr>
-
-##### Blockquote
-
-> This is a blockquote example.
-
-<hr>
-
-##### Inline HTML
-
-You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
-
-<dl>
-<dt>Definition list</dt>
-<dd>Is something people use sometimes.</dd>
-
-<dt>Markdown in HTML</dt>
-<dd>Does _not_ work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-<hr>
-
-##### Tables
-
-Colons can be used to align columns.
-
-| Tables | Are | Cool |
-| --- | :---: | ---: |
-| col 3 is | right-aligned | $1600 |
-| col 2 is | centered | $12 |
-| zebra stripes | are neat | $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less | Pretty |
-| --- | --- | --- |
-| Still | renders | nicely |
-| 1 | 2 | 3 |
-
-<hr>
-
-##### Image
-
-![image](../../images/post/post-1.jpg)
-
-<hr>
-
-##### Youtube video
-
-{{< youtube C0DPdy98e4c >}}
+  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form.
