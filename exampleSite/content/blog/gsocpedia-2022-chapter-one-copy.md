@@ -2,7 +2,6 @@
 categories = ["GSOC"]
 date = 2022-06-26T05:08:47Z
 description = "Gsoc experience chapter one"
-draft = true
 image = "/uploads/12-removebg-preview.png"
 tags = ["GSoC", "Internship"]
 title = "GSoCpedia 2022: Chapter One-(copy)"
