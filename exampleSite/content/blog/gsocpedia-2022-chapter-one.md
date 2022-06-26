@@ -5,6 +5,7 @@ description = "Gsoc experience chapter one"
 image = "/uploads/12-removebg-preview.png"
 tags = ["Internship", "GSoC"]
 title = "GSoCpedia 2022: Chapter One"
+type = "post"
 
 +++
 > _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
