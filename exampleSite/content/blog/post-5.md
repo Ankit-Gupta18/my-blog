@@ -47,7 +47,6 @@ The project I will be working on is the [Edit Request Wizard](https://summerofco
               console.log( api.getErrorMessage( data ).text());
             } );
           }
-          
           // API calls code goes here
                   editPage({
                     title: (new mw.Title(mw.config.get("wgPageName"))).getTalkPage().toText(),
