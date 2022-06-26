@@ -9,7 +9,7 @@ title = "GSoCpedia 2022: Chapter One-(copy)"
 type = "post"
 
 +++
-> _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
+> _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_ 
 
 ### Getting started
 
@@ -54,4 +54,4 @@ The project I will be working on is the [Edit Request Wizard](https://summerofco
 
   ![](/uploads/talk-page-interface-blog-chapter-one.png)
 
-  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form. 
+  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form.
