@@ -1,8 +1,8 @@
 +++
 categories = ["GSOC"]
 date = 2022-06-25T19:32:00Z
-description = "Gsoc experience chapter one"
-image = "/uploads/12-removebg-preview.png"
+description = "Gsoc experience chapter three"
+image = "/uploads/14-removebg-preview.png"
 tags = ["Internship", "GSoC"]
 title = "GSoCpedia 2022: Chapter Three"
 type = "post"
