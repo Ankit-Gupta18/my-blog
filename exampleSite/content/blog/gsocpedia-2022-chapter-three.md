@@ -9,11 +9,13 @@ title = "GSoCpedia 2022: Chapter Three"
 type = "post"
 
 +++
-> _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
+> “Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.”
+>
+> \~ Mosher’s Law of Software Engineering
 
-### Getting started
-
-The project I will be working on is the [Edit Request Wizard](https://summerofcode.withgoogle.com/programs/2022/projects/u0WNs8PY "Project").  This project aims at creating a step-by-step form to help beginners submit a Wikipedia edit request. An edit request is a request for someone to change some text in an article. Edit requests are an important part of Wikipedia. The form created in this project will help the edit requests comply with Wikipedia policy. It will be developed as a Wikipedia user script that shows a form for submitting a Wikipedia edit request, with high-quality guidance and error messages, suitable for use by beginners, and a backend server that the user script will make calls to for validation of source and quote.
+I would like to start this blog with one of the stories shared on the WaterCooler by James.  
+Early in his career, he worked in an aviation company in the UK. The project was related to the network connectivity of the airplane during its entire journey. The code was written. The code was tested by flying the plane through the UK. Everything seemed to be working fine. Now the interesting part, during an international journey the network connection was working just fine until it suddenly disconnected completely. When the flight landed, the development team was called to figure out what went wrong. Turns out the flight passed through the equator (latitude: 0) leading to the divide by zero error!😱  
+_Moral: The importance of testing is real_ ✨
 
 ### Highlights
 
