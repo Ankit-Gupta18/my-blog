@@ -1,57 +1,55 @@
 +++
 categories = ["GSOC"]
 date = 2022-06-25T19:32:00Z
-description = "Gsoc experience chapter one"
+description = "Gsoc experience chapter two"
 draft = true
-image = "/uploads/12-removebg-preview.png"
+image = "/uploads/13-removebg-preview.png"
 tags = ["Internship", "GSoC"]
 title = "GSoCpedia 2022: Chapter Two"
 type = "post"
 
 +++
-> _“The mission of the Wikimedia Foundation is to empower and engage people around the world to collect and develop educational content under a free license or in the public domain, and to disseminate it effectively and globally.”_
+> “It's not the Destination, It's the journey.”
+>
+> \~ Ralph Waldo
 
-### Getting started
-
-The project I will be working on is the [Edit Request Wizard](https://summerofcode.withgoogle.com/programs/2022/projects/u0WNs8PY "Project").  This project aims at creating a step-by-step form to help beginners submit a Wikipedia edit request. An edit request is a request for someone to change some text in an article. Edit requests are an important part of Wikipedia. The form created in this project will help the edit requests comply with Wikipedia policy. It will be developed as a Wikipedia user script that shows a form for submitting a Wikipedia edit request, with high-quality guidance and error messages, suitable for use by beginners, and a backend server that the user script will make calls to for validation of source and quote.
+It’s been less than a month but this community has really grown on me. The past few weeks have been really eventful. A huge shoutout to my mentor, **Daniel Glus, and Siddharth** for giving me the best onboarding experience ever! In this short span, I gained a new sense of professionalism and a clearer view of what it meant to be working as a community! 💜
 
 ### Highlights
 
-#### Week 1 - 2(13th - 26th June)
+#### Week 3 - 4(27th June - 10th July)
 
-* Discussed the project idea on Minimum Viable Product(MVP), and the overall workflow of the project with mentors in the meeting.
+Of all the past and upcoming weeks, this one is always going to be my favorite. I got to learn about how things actually run behind the front, on the server!! :)
 
-  ![](/uploads/gsoc-meet-1.png)
-* Learned OOUI for creating the user interface of the form and MediaWiki API to add functionality in the form to make API calls.
-* Created the initial frontend ie an edit request form shown as a popup with the following steps:
-  * Input for the URL
-  * An interface to select the location of the text
-  * Input for the Quote
-  * Input for the Rephrased Quote
+* Changed the citation screen to use Citoid API(extracts the citation from the URL) and display it on the talk page.
+* Added functionality to let users know they are on the process of editing while selecting the spot by dimming the background.
+* Build the backend server to check if the quote comes from the cited URL.
 
-  ![](/uploads/form-blog-chapter-one.png)
-* Added functionality to the form to put these values on the Talk Page of the current article using MediaWiki API calls.
+      // API to verify the quote if it comes from source
+      app.post('/api/v1/verifyQuote', async (req, res) => {
+        const { linkValue, quoteValue } = req.body;
+        try {
+          fetch(linkValue)
+          .then(res => res.text())
+          .then((html) => {
+            const { document } = (new JSDOM(html)).window;
+            const isParagraphTextOnPage =  document.body.textContent.includes( quoteValue )
+            res.send({isParagraphTextOnPage})
+          }); 
+        } catch (error) {
+          console.log(error)
+          res.send('failure')
+          res.sendStatus(404);
+        } 
+      })
 
-      function editPage( info ) {
-            var api = new mw.Api();
-            api.postWithToken("csrf", {
-              action: 'edit',
-              title: info.title,
-              appendtext: info.text, // will replace entire page content
-              summary: info.summary
-            } ).done(function( data ) {
-              alert( 'Edit Request sent to talk page..!' );
-            } ).fail( function(code, data) {
-              console.log( api.getErrorMessage( data ).text());
-            } );
-          }
-          // API calls code goes here
-                  editPage({
-                    title: (new mw.Title(mw.config.get("wgPageName"))).getTalkPage().toText(),
-                    text: '<b>Edit Request made by</b> ~~' + '~~' + '<br><b>Source URL:</b> ' + linkValue + '<br><b>Spot where to add the fact:</b> ' + selectValue + '<br><b>Quote:</b> ' + quoteValue + '<br><b>Rephrased Quote:</b> ' + requoteValue + '<br><br> ',
-                    summary: 'Edit Request to add a fact'
-                  }); 
 
-  ![](/uploads/talk-page-interface-blog-chapter-one.png)
+* Added functionality to store the section(from the article) of the spot where the edit is to be made.
+* Learned more about the Wikimedia server named Toolforge.
+* Created a Wikimedia developer account and submitted the Toolforge project membership request.
+* Discussed the working of the Toolforge with the mentors, and also deployed the production files to the server. Got to learn a lot in this meet about how things actually run behind the front, on the server.
 
-  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form.
+  ![](/uploads/2.png)
+* Successfully deployed my project(MVP) on the server!!!
+
+It was really a productive week coding. Learned more about professionalism and how things actually work behind the front. Looking forward for more such productive weeks of coding!!!
