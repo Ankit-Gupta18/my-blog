@@ -12,7 +12,7 @@ type = "post"
 
 ### Foreword
 
-Google Summer of Code (GSoC) is a global program focused on introducing students to open-source software development. Students work on a 3-month programming project with an open-source organization during their break from university.
+Google Summer of Code (GSoC) is a global program focused on introducing students to open-source software development. Students work on a 3 month programming project with an open-source organization during their break from university.
 
 As a part of Google Summer of Code, student participants are paired with a mentor from the participating organizations, gaining exposure to real-world software development and techniques. Students have the opportunity to spend the break between their school semesters earning a stipend while working in areas related to their interests.
 
