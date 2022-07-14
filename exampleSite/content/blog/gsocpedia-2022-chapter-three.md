@@ -18,41 +18,35 @@ _Moral: The importance of testing is real_ ✨
 
 ### Highlights
 
-#### Week 1 - 2(13th - 26th June)
+#### Week 5 - 6(11th - 25th July)
 
-* Discussed the project idea on Minimum Viable Product(MVP), and the overall workflow of the project with mentors in the meeting.
+* Added a Welcome page at the beginning of the Edit Request Wizard with guidelines to follow in the process.
+* Created a ping route (GET /ping) which returns some simple response so that we can easily verify via web whether the service is running.
+* Written a cron job that hits this ping endpoint every 15 minutes, and sends out an email to tool maintainers if the server is found to be not running.
+* Written a GitHub action that automatically deploys code to toolforge whenever you commit to the main branch (it would ssh into toolforge and run git pull + npm install + webservice restart)
 
-  ![](/uploads/gsoc-meet-1.png)
-* Learned OOUI for creating the user interface of the form and MediaWiki API to add functionality in the form to make API calls.
-* Created the initial frontend ie an edit request form shown as a popup with the following steps:
-  * Input for the URL
-  * An interface to select the location of the text
-  * Input for the Quote
-  * Input for the Rephrased Quote
-
-  ![](/uploads/form-blog-chapter-one.png)
-* Added functionality to the form to put these values on the Talk Page of the current article using MediaWiki API calls.
-
-      function editPage( info ) {
-            var api = new mw.Api();
-            api.postWithToken("csrf", {
-              action: 'edit',
-              title: info.title,
-              appendtext: info.text, // will replace entire page content
-              summary: info.summary
-            } ).done(function( data ) {
-              alert( 'Edit Request sent to talk page..!' );
-            } ).fail( function(code, data) {
-              console.log( api.getErrorMessage( data ).text());
-            } );
-          }
-          // API calls code goes here
-                  editPage({
-                    title: (new mw.Title(mw.config.get("wgPageName"))).getTalkPage().toText(),
-                    text: '<b>Edit Request made by</b> ~~' + '~~' + '<br><b>Source URL:</b> ' + linkValue + '<br><b>Spot where to add the fact:</b> ' + selectValue + '<br><b>Quote:</b> ' + quoteValue + '<br><b>Rephrased Quote:</b> ' + requoteValue + '<br><br> ',
-                    summary: 'Edit Request to add a fact'
-                  }); 
-
-  ![](/uploads/talk-page-interface-blog-chapter-one.png)
-
-  It was great week coding on the MVP. Learned many new tech stacks and had a great learning experience. In the coming weeks, I might be working more on the UI enhancement and adding more functionalities to my form.
+      name: Deploy to Toolforge
+      
+      on:
+        - push
+        - workflow_dispatch
+      
+      jobs:
+        update:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v2
+            - uses: garygrossgarten/github-action-ssh@2b10f41b5a33808f6d24eafd253296766308b7c4
+              with:
+                command: >-
+                  become edit-wizard bash -c '
+                    cd Edit-Request-Wizard/Backend;
+                    git pull;
+                    npm install;
+                    webservice --backend=kubernetes node12 restart;
+                  '
+                host: login.toolforge.org
+                username: ankitgupta
+                privateKey: ${{ secrets.TOOLFORGE_PRIVATE_KEY }}
+                passphrase: ${{ secrets.PASSPHRASE }}
+       
