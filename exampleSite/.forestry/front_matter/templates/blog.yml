@@ -25,4 +25,5 @@ fields:
   label: type
 pages:
 - exampleSite/content/blog/gsocpedia-2022-chapter-one.md
+- exampleSite/content/blog/gsocpedia-2022-chapter-three.md
 - exampleSite/content/blog/gsocpedia-2022-chapter-two.md
