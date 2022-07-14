@@ -52,4 +52,4 @@ Of all the past and upcoming weeks, this one is always going to be my favorite. 
   ![](/uploads/2.png)
 * Successfully deployed my project(MVP) on the server!!!
 
-It was really a productive week coding. Learned more about professionalism and how things actually work behind the front. Looking forward for more such productive weeks of coding!!!
+It was really a productive week coding. Learned more about professionalism and how things actually work behind the front. Looking forward to more productive weeks of coding!!!
