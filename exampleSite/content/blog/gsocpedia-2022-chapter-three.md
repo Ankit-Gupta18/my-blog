@@ -20,33 +20,67 @@ _Moral: The importance of testing is real_ ✨
 
 #### Week 5 - 6(11th - 25th July)
 
-* Added a Welcome page at the beginning of the Edit Request Wizard with guidelines to follow in the process.
 * Created a ping route (GET /ping) which returns some simple response so that we can easily verify via web whether the service is running.
 * Written a cron job that hits this ping endpoint every 15 minutes, and sends out an email to tool maintainers if the server is found to be not running.
 * Written a GitHub action that automatically deploys code to toolforge whenever you commit to the main branch (it would ssh into toolforge and run git pull + npm install + webservice restart)
+* Build the backend service to verify the source using the unreliable.json file.
+* Added the functionality to show Loading... on screen while waiting for a backend call.
 
-      name: Deploy to Toolforge
+      // API to verify source
+      app.post('/api/v1/verifySource', async (req, res) => {
+        const linkValue = req.body;
       
-      on:
-        - push
-        - workflow_dispatch
-      
-      jobs:
-        update:
-          runs-on: ubuntu-latest
-          steps:
-            - uses: actions/checkout@v2
-            - uses: garygrossgarten/github-action-ssh@2b10f41b5a33808f6d24eafd253296766308b7c4
-              with:
-                command: >-
-                  become edit-wizard bash -c '
-                    cd Edit-Request-Wizard/Backend;
-                    git pull;
-                    npm install;
-                    webservice --backend=kubernetes node12 restart;
-                  '
-                host: login.toolforge.org
-                username: ankitgupta
-                privateKey: ${{ secrets.TOOLFORGE_PRIVATE_KEY }}
-                passphrase: ${{ secrets.PASSPHRASE }}
-       
+        const BreakError = {};
+        var flag = 0;
+        var comment = "";
+        var kind = "";
+        try{
+          var url = new URL(linkValue.linkValue);
+          try {
+            data.then(function(json){
+              try{
+              (json).forEach(element => {
+                const Origins = element.list;
+                var regex = element.regex;
+                var re = new RegExp('\\b(?:' + regex + ')\\b');
+                if(element.list != null){
+                  if (Origins.some(origin => url.origin.includes(origin))) {
+                    comment = element.comment;
+                    kind = element.kind;
+                    flag = 1;
+                    res.send({ comment, flag, kind });
+                    throw BreakError;
+                  }
+                }
+                if(element.regex!=null){
+                  if(re.test(url)){
+                    comment = element.comment;
+                    kind = element.kind;
+                    flag = 1;
+                    res.send({ comment, flag, kind });
+                    throw BreakError;
+                  }
+                }
+              });
+            } catch (err) {
+              if (err !== BreakError) throw err;
+            }
+              if(flag==0){
+                res.send({comment, flag, kind});
+              }
+            });
+            
+          } 
+          catch (error) {
+            res.send('failure')
+            res.sendStatus(404);
+          }
+          }
+          catch(error){
+            flag=2;
+            res.send({comment, flag, kind});
+          }
+         
+      })
+
+It was really a great week learning and pushing my backend development skills to a new level by learning a lot of new stuff and integrating with frontend with Node.js.
