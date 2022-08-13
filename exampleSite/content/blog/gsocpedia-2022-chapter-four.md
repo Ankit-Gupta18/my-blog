@@ -1,87 +1,35 @@
 +++
 categories = ["GSOC"]
-date = 2022-06-25T19:32:00Z
-description = "Gsoc experience chapter three"
+date = 2022-08-07T18:30:00Z
+description = "Gsoc experience chapter four"
 draft = true
-image = "/uploads/14-removebg-preview.png"
+image = "/uploads/15-removebg-preview.png"
 tags = ["Internship", "GSoC"]
 title = "GSoCpedia 2022: Chapter Four"
 type = "post"
 
 +++
-> “Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.”
+> “With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don’t know if our code is getting better or worse.”
 >
-> \~ Mosher’s Law of Software Engineering
+> \~ Michael Feathers (Working Effectively with Legacy Code)
 
-I would like to start this blog with one of the stories shared on the WaterCooler by James.  
-Early in his career, he worked in an aviation company in the UK. The project was related to the network connectivity of the airplane during its entire journey. The code was written. The code was tested by flying the plane through the UK. Everything seemed to be working fine. Now the interesting part, during an international journey the network connection was working just fine until it suddenly disconnected completely. When the flight landed, the development team was called to figure out what went wrong. Turns out the flight passed through the equator (latitude: 0) leading to the divide by zero error!😱  
-_Moral: The importance of testing is real_ ✨
+Ah! This week all started with excitement for the mid-term evaluations. I was pretty sure of getting good feedback from my mentors. Everything went well as expected and finally, I was landed to have the very first income of my life. My joy knew no bounds to have that credit message popping up on my phone screen!!  
+![](/uploads/stipend-credit-message.jpeg)
 
 ### Highlights
 
-#### Week 5 - 6(11th - 25th July)
+#### Week 7 - 8(26th July - 8th August)
 
-* Created a ping route (GET /ping) which returns some simple response so that we can easily verify via web whether the service is running.
-* Written a cron job that hits this ping endpoint every 15 minutes, and sends out an email to tool maintainers if the server is found to be not running.
-* Written a GitHub action that automatically deploys code to toolforge whenever you commit to the main branch (it would ssh into toolforge and run git pull + npm install + webservice restart)
-* Build the backend service to verify the source using the unreliable.json file.
-* Added the functionality to show Loading... on screen while waiting for a backend call.
+* Added caching for the JSON for fast response in verifying the source leading to a better user experience.
+* Added the Edit Wizard button as a tab next to "edit" on the Wikipedia header tab.
+* Added the functionality to verify the regexes present in the unreliable.json file. Now, the project can successfully verify the web URL as well as DOI.
+* Code cleanup, fixed minor bugs, and added comments in the server files.
+* 8th week started with a fun meeting collaborating with all the fellow GSoC contributors in Wikimedia. It was a great meeting discussing each other's progress and watching a live demo of the project prototype.
 
-      // API to verify source
-      app.post('/api/v1/verifySource', async (req, res) => {
-        const linkValue = req.body;
-      
-        const BreakError = {};
-        var flag = 0;
-        var comment = "";
-        var kind = "";
-        try{
-          var url = new URL(linkValue.linkValue);
-          try {
-            data.then(function(json){
-              try{
-              (json).forEach(element => {
-                const Origins = element.list;
-                var regex = element.regex;
-                var re = new RegExp('\\b(?:' + regex + ')\\b');
-                if(element.list != null){
-                  if (Origins.some(origin => url.origin.includes(origin))) {
-                    comment = element.comment;
-                    kind = element.kind;
-                    flag = 1;
-                    res.send({ comment, flag, kind });
-                    throw BreakError;
-                  }
-                }
-                if(element.regex!=null){
-                  if(re.test(url)){
-                    comment = element.comment;
-                    kind = element.kind;
-                    flag = 1;
-                    res.send({ comment, flag, kind });
-                    throw BreakError;
-                  }
-                }
-              });
-            } catch (err) {
-              if (err !== BreakError) throw err;
-            }
-              if(flag==0){
-                res.send({comment, flag, kind});
-              }
-            });
-            
-          } 
-          catch (error) {
-            res.send('failure')
-            res.sendStatus(404);
-          }
-          }
-          catch(error){
-            flag=2;
-            res.send({comment, flag, kind});
-          }
-         
-      })
+  ![](/uploads/gmeet.png)
+* Published the project for community votes on Wikipedia and their
+* Had a meeting with my mentor on project status updates and future plans.
 
-It was really a great week learning and pushing my backend development skills to a new level by learning a lot of new stuff and integrating with frontend with Node.js.
+  ![](/uploads/112.png)
+
+It was really a great week learning and meeting with fellow contributors. HAD FUN..!!!
