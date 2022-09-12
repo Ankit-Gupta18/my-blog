@@ -12,12 +12,21 @@ type = "post"
 >
 > \~ Emily Lillian
 
-This week was somewhat historic because I have got a lot of feedback from the community members to work on and the mentors have raised several issue on the GitHub repository summarizing the feedback( nearly 20 issues I guess!!)
+This week was somewhat historic because I got a lot of feedback from the community members to work on and the mentors have raised several issues on the GitHub repository summarizing the feedback( nearly 15 issues I guess!!)
 
 ### Highlights
 
 #### Week 9 - 10(9th August - 22nd August)
 
-* 
+* Fixed lot of bugs in the Wizard and further enhancements:
+  * loading forever bug
+  * extra button on first screen
+  * unusual font face in tool tip
+  * headers greyed between screens
+  * backend request IP logging
+* Displayed copyright boilerplate at the bottom of edit request publish screen.
+* Included formatted reference in edit requests on talk page.
+* Upgraded user interface for selecting a location in the article, now user can click on the respective paragraph they want to edit rather selecting the sentence.
+* Added backed unit testing with chai and mocha and integrated them with the development pipeline to automate things.
 
-It was really a great week learning and meeting with fellow contributors. HAD FUN..!!!
+That’s all folks. See you in two weeks!
